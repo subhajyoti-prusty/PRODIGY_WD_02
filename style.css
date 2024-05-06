@@ -1,0 +1,131 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  background-color: #b4b4b8;
+  color: #3c3633;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Stopwatch Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.time {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  background-color: #a3c9aa;
+  margin: 0 5px;
+}
+
+.time p {
+  margin-left: 5px;
+}
+
+/* Button Styles */
+.functions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 80px;
+  height: 25px;
+  background-color: #005b41;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: green;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .time {
+    width: 150px;
+    margin: 5px 0;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .time {
+    width: 180px;
+  }
+}
+/* Moving track styles */
+.moving-track {
+  height: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-image: linear-gradient(to right, #a3c9aa, #005b41);
+  animation: moveTrack 5s linear infinite;
+}
+
+@keyframes moveTrack {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Running track visualization */
+.running-visualization {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url("https://tenor.com/view/cutie-run-gif-21763974");
+  background-size: cover;
+  animation: runAnimation 1s steps(8) infinite;
+}
+
+@keyframes runAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -400px 0;
+  }
+}
